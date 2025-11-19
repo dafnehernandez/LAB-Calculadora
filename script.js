@@ -43,6 +43,7 @@ function division(a,b){
     [a,b] = convertToNumber(a,b);
     validateNumber(a,b);
     if (b == 0){
+    //return "cant' divide 0";
         return 0;
     }
     else if (a == 0){
@@ -53,12 +54,51 @@ function division(a,b){
     }   
 }
 
-// Usando strings para los numeros
-let num1 = "5";
-let num2 = "10";
-let result = addition(num1, num2);
-let result2 = subtraction(num1, num2);
-let result3 = multiplication(num1, num2);
-let result4 = division(num1, num2);
+// Using strings for numbers
+let num1 = prompt("Enter the first number: ");
+let num2 = prompt("Enter the second number: ");
 
-console.log(`El resultado de la suma es: ${result}, el resultado de la resta es: ${result2}, el resultado de la multiplicacion es: ${result3}, el resultado de la division es: ${result4}`);
+// Request operation
+let operation = Number(prompt("Select operation:\n" + "1.-addition, 2.-subtraction, 3.-multiplication 4.-division\n"));
+
+//Show result, operation and unique color
+let result;
+let color;
+let text;
+
+if (operation == 1) {
+    result = addition(num1, num2);
+    color = "goldenrod";
+    text = "addition";
+
+} else if (operation == 2) {
+    result = subtraction(num1, num2);
+    color = "turquoise";
+    text = "subtraction";
+
+} else if (operation == 3) {
+    result = multiplication(num1, num2);
+    color = "orchid";
+    text = "multiplication";
+
+} else if (operation == 4) {
+    result = division(num1, num2);
+    color = "red";
+    text = "division";
+
+} else {
+    result = "Invalid operation. Use: addition, subtraction, multiplication or division.";
+    color = "black";
+}
+
+//Show numbers on HTML
+document.getElementById("numbers").innerHTML = `The numbers that will perform some operation are: <b>${num1}</b> y <b>${num2}</b>`;
+
+//Show operation on HTML
+document.getElementById("nameOperation").innerHTML = `<p style="color: ${color}; font-size: 20px;">The selected operation was: <b>${text}</b>`;
+
+// Show the result on HTML whit color
+document.getElementById("result").innerHTML = `<p style="color: ${color}; font-size: 20px;">Result: ${result}</p>`;
+
+// Result on console
+console.log(`Result is: ${result}`);
