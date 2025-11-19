@@ -53,19 +53,12 @@ function division(a,b){
     }   
 }
 
-/*let result = addition(10,5)
-let result2 = subtraction(4,5)
-let result3 = multiplication(6,8)
-let result4 = division(4,2)
-
-console.log("El resultado de la suma es: " + result, ", el resultado de resta es: " + result2,
-", el resultado de la multiplicacion es: " + result3, ", el resultado de la division es: "+ result4);
-
-*/
-
 // Usando strings para los numeros
-let num1 = "10";
-let num2 = "5";
+let num1 = "5";
+let num2 = "10";
 let result = addition(num1, num2);
+let result2 = subtraction(num1, num2);
+let result3 = multiplication(num1, num2);
+let result4 = division(num1, num2);
 
-console.log("Resultado de la operacion es: "+ result);
+console.log(`El resultado de la suma es: ${result}, el resultado de la resta es: ${result2}, el resultado de la multiplicacion es: ${result3}, el resultado de la division es: ${result4}`);
